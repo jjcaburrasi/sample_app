@@ -5,6 +5,7 @@ ruby '2.7.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
+gem 'bootstrap-sass', '3.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -52,6 +53,7 @@ group :test do
   gem 'webdrivers'
    gem 'minitest',                 '5.11.3'
   gem 'minitest-reporters',       '1.3.8'
+  gem 'rails-controller-testing', '1.0.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
