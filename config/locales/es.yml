@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      user:
+        one: "Usuario"
+        otther: "Usuarios"
+    attributes:
+      name: "Nombre"
+      email: "Correo Electronico"
+    errors:
+      models:
+        micropost:
+          attributes:
+            content:
+              blank: "Es un campo requerido"
+  helpers:
+    submit:
+      user:
+        create: "crear"
