@@ -98,6 +98,10 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+  # Returns all the user thar match with the search
+  def self.find_users(user)
+    User.where("lower(name) LIKE ? ","%" + user + "%")
+  end
 
 
 
