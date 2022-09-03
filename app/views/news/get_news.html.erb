@@ -1,0 +1,39 @@
+<% provide(:title, "News") %>
+<h1>News of the day </h1>
+
+
+ <% @data_news.each do |data|%>
+ <%if !data["image"].nil?%> 
+<div class="card mb-3" style="max-width: 1000px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src=<%=data["image"]%> class="img-thumbnail" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+       <p><strong><h5 class="card-title"><%=data["title"]%></h5></strong></p>
+         <p class="card-text"><%=data["description"]%></p>
+      <a href=<%=data["url"]%> class="center btn btn-primary">Go to news</a>
+      </div>
+    </div>
+  </div>
+</div><br><hr>
+<%else%>
+<div class="card mb-3" style="max-width: 1000px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%=image_tag"no_image.png",width: "200"%>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+       <p><strong><h5 class="card-title"><%=data["title"]%></h5></strong></p>
+         <p class="card-text"><%=data["description"]%></p>
+      <a href=<%=data["url"]%> class="center btn btn-primary">Go to news</a>
+      </div>
+    </div>
+  </div>
+</div><br><hr>
+<%end%>
+<%end%>
+
+ 

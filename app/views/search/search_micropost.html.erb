@@ -1,0 +1,8 @@
+<% provide(:title, "Search micropost") %>
+<h1>Micropost search results</h1>
+
+<% if !@find_microposts.nil? %>
+  <ol class="microposts">
+    <%= render @find_microposts %>
+  </ol>
+<%end%>

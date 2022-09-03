@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get    '/login',             to: 'sessions#new'
   get    '/search_user',       to: 'search#search_user'
   get    '/search_micropost',  to: 'search#search_micropost'
+  get    '/news',              to: 'news#get_news'
   post   '/login',             to: 'sessions#create'
   delete '/logout',            to: 'sessions#destroy'
   resources :users do
