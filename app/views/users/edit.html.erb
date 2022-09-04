@@ -19,7 +19,7 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
     <span class="image">
-    <%if user.display_feed_image %> 
+    <%if @user.display_feed_image %> 
       <div class="gravatar"><%= image_tag @user.display_feed_image%></div>
     <%else%>
       <%= gravatar_for @user, size: 50 %>
