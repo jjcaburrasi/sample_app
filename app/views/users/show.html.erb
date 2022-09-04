@@ -3,8 +3,12 @@
   <aside class="col-md-4">
     <section>
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+      <%if @user.display_feed_image %> 
+        <div class="gravatar"><%= image_tag @user.display_feed_image%></div>
+      <%else%>
+        <%= gravatar_for @user, size: 100 %>
+      <%end%>
+        <%= link_to @user.name, @user %>
       </h1>
     </section>
     <section class="stats">

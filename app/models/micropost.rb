@@ -9,12 +9,21 @@ class Micropost < ApplicationRecord
                       size: { less_than: 5.megabytes,
                               message:   "should be less than 5MB" }
 
-  # Returns all the user thar match with the search
+  # Returns all the microposts that match with the search
   def self.find_microposts(microposts)
     Micropost.where("lower(content) LIKE ? ","%" + microposts + "%")
   end
+
   # Returns a resized image for display.
   def display_image
     image.variant(resize_to_limit: [500, 500])
   end
+
+
+
+
+
+
+
+  
 end

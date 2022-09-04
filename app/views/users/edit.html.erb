@@ -18,12 +18,17 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+    <span class="image">
+    <%= f.label :profile_image, "Change profile image" %>
+    <%= f.file_field :profile_image, accept: "image/jpeg,image/gif,image/png" %>
+    </span>
+
+    <span class="image">
+    <%= f.label :back_image, "Change back image" %>
+    <%= f.file_field :back_image, accept: "image/jpeg,image/gif,image/png" %>
+    </span>
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
-
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="https://gravatar.com/emails">change</a>
-    </div>
   </div>
 </div>

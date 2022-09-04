@@ -163,6 +163,11 @@ aside {
   margin-right: 10px;
 }
 
+.profile {
+  float: left;
+  margin-right: 10px;
+}
+
 .gravatar_edit {
   margin-top: 15px;
 }
@@ -198,7 +203,15 @@ aside {
   a {
     padding: 0;
   }
-}
+  .profile {
+    
+      margin: 1px 1px;
+    }
+    a {
+      padding: 0;
+    }
+  }
+
 
 .users.follow {
   padding: 0;
@@ -288,6 +301,12 @@ input {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
+  }
+  .profile {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+
   }
 }
 

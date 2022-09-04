@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_one_attached :profile_image
+  has_one_attached :back_image
   has_many :microposts, dependent: :destroy
   has_many :active_relationships,  class_name:  "Relationship",
                                    foreign_key: "follower_id",
@@ -18,6 +20,16 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :profile_image,   content_type: { in: %w[image/jpeg image/gif image/png],
+                                  message: "must be a valid image format" },
+                                  size: { less_than: 5.megabytes,
+                                  message:   "should be less than 5MB" }
+  validates :back_image,   content_type: { in: %w[image/jpeg image/gif image/png],
+                                  message: "must be a valid image format" },
+                                  size: { less_than: 5.megabytes,
+                                  message:   "should be less than 5MB" }
+                                
+                              
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -101,6 +113,18 @@ class User < ApplicationRecord
   # Returns all the user thar match with the search
   def self.find_users(user)
     User.where("lower(name) LIKE ? ","%" + user + "%")
+  end
+
+  def display_profile_image
+    profile_image.variant(resize_to_limit: [100, 100])
+  end
+
+  def display_feed_image
+    profile_image.variant(resize_to_limit: [50, 50])
+  end
+
+  def display_back_image
+    back_image.variant(resize_to_limit: [500, 500])
   end
 
 
