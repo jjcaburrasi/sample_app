@@ -19,7 +19,11 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
     <span class="image">
-    <div class="gravatar"><%= image_tag @user.display_feed_image%></div>
+    <%if user.display_feed_image %> 
+      <div class="gravatar"><%= image_tag @user.display_feed_image%></div>
+    <%else%>
+      <%= gravatar_for @user, size: 50 %>
+    <%end%>
     <%= f.label :profile_image, "Change profile image" %>
     <%= f.file_field :profile_image, accept: "image/jpeg,image/gif,image/png" %>
     </span>
