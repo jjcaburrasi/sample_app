@@ -2,7 +2,7 @@
 <h1>User search results</h1>
 
 <% if !@find_users.nil? %>
-  <ol class="microposts">
-    <%= render @find_users %>
-  </ol>
+ <ul class="users">
+  <%= render @find_users %>
+</ul>
 <%end%>
