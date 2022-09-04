@@ -3,8 +3,8 @@
   <aside class="col-md-4">
     <section>
       <h1>
-      <%if @user.display_feed_image %> 
-        <div class="gravatar"><%= image_tag @user.display_feed_image%></div>
+      <%if @user.display_profile_image %> 
+        <div class="gravatar"><%= image_tag @user.display_profile_image%></div>
       <%else%>
         <%= gravatar_for @user, size: 100 %>
       <%end%>

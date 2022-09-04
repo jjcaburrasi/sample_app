@@ -2,6 +2,7 @@ require 'json'
 require 'rest-client'
 
 class NewsController < ApplicationController
+before_action :logged_in_user
 
     def get_news
         url = "http://api.mediastack.com/v1/news?access_key=cf762488c3863d57410f231c14577d9e&languages=en&categories=-general"

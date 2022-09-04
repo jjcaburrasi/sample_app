@@ -19,13 +19,9 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
     <span class="image">
+    <div class="gravatar"><%= image_tag @user.display_feed_image%></div>
     <%= f.label :profile_image, "Change profile image" %>
     <%= f.file_field :profile_image, accept: "image/jpeg,image/gif,image/png" %>
-    </span>
-
-    <span class="image">
-    <%= f.label :back_image, "Change back image" %>
-    <%= f.file_field :back_image, accept: "image/jpeg,image/gif,image/png" %>
     </span>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>

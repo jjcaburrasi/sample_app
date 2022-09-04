@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
     before_action :downcase
+    before_action :logged_in_user
 
     def search_user
     @find_users=User.find_users(@search)
