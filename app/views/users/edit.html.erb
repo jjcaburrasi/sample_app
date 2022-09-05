@@ -24,7 +24,10 @@
     <%else%>
       <%= gravatar_for @user, size: 50 %>
     <%end%>
+    
     <%= f.label :profile_image, "Change profile image" %>
+    <br>
+  
     <%= f.file_field :profile_image, accept: "image/jpeg,image/gif,image/png" %>
     </span>
 
